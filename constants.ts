@@ -42,7 +42,7 @@ export const EXPERIENCES: Experience[] = [
 export const EDUCATION: Education[] = [
   {
     institution: "Cruzeiro do Sul Virtual",
-    degree: "Bacharelado, Matemática e Ciência da Computação",
+    degree: "Bacharelado em engenharia de software",
     period: "2025 - 2029"
   },
   {
