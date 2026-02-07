@@ -3,6 +3,7 @@ import React from 'react';
 import { Award, ExternalLink, ShieldCheck, Medal } from 'lucide-react';
 import { CERTIFICATIONS } from '../../constants';
 import UnitHeader from '../ui/UnitHeader';
+import RewardCard from '../ui/RewardCard';
 
 const CertificationsSection: React.FC = () => {
   return (
@@ -51,19 +52,14 @@ const CertificationsSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Epic Reward Badge */}
-      <div className="mt-16 bg-[#58cc02] border-b-8 border-[#46a302] p-8 rounded-[2.5rem] flex flex-col md:flex-row items-center justify-between text-white group overflow-hidden relative text-center md:text-left">
-         <div className="absolute right-0 top-0 opacity-10 -rotate-12 translate-x-4">
-            <Award size={160} />
-         </div>
-         <div className="relative z-10 mb-6 md:mb-0">
-            <h4 className="font-black text-xl mb-1 uppercase tracking-tighter">Colecionador de Elite</h4>
-            <p className="font-bold text-white/80 text-sm">Mais de 7 certificações técnicas de alto nível desbloqueadas.</p>
-         </div>
-         <div className="bg-white/20 p-5 rounded-[2rem] backdrop-blur-sm relative z-10 shrink-0 transform group-hover:scale-110 transition-transform">
-            <ShieldCheck size={48} fill="white" />
-         </div>
-      </div>
+      {/* Standardized Reward Card */}
+      <RewardCard 
+        title="Colecionador de Elite"
+        description="Mais de 7 certificações técnicas de alto nível desbloqueadas em instituições renomadas como Origamid, Udemy e DevMedia."
+        icon={ShieldCheck}
+        bgColor="bg-[#58cc02]"
+        borderColor="border-[#46a302]"
+      />
     </section>
   );
 };

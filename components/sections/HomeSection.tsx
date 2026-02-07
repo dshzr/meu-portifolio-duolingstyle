@@ -3,6 +3,7 @@ import React from 'react';
 import { User, Zap, Flame, Target } from 'lucide-react';
 import UnitHeader from '../ui/UnitHeader';
 import DuoButton from '../ui/DuoButton';
+import RewardCard from '../ui/RewardCard';
 
 interface HomeSectionProps {
   onStartJourney: () => void;
@@ -69,24 +70,14 @@ const HomeSection: React.FC<HomeSectionProps> = ({ onStartJourney }) => {
           </div>
         </div>
 
-        {/* Dynamic Quote Card */}
-        <div className="bg-gradient-to-r from-[#58cc02] to-[#46a302] border-b-8 border-[#3a8602] rounded-[2.5rem] p-8 w-full mb-16 text-white group hover:scale-[1.02] transition-all cursor-default relative overflow-hidden">
-          <div className="absolute -left-4 -bottom-4 opacity-10">
-          
-          </div>
-          <div className="relative z-10 flex flex-col md:flex-row items-center gap-6">
-            
-            <div className="text-center md:text-left">
-              <p className="font-black text-xl md:text-2xl mb-2 italic leading-tight">
-                "Ensinar é a melhor forma de aprender"
-              </p>
-              <div className="h-1 w-20 bg-white/30 rounded-full mb-3 mx-auto md:mx-0"></div>
-              <p className="text-white/90 text-sm md:text-base font-bold">
-                Simplificando a tecnologia para que qualquer pessoa possa construir o extraordinário.
-              </p>
-            </div>
-          </div>
-        </div>
+        {/* Standardized Reward Card */}
+        <RewardCard 
+          title="Mentor de Conhecimento"
+          description="Ensinar é a melhor forma de aprender. Simplificando a tecnologia para que qualquer pessoa possa construir o extraordinário."
+          icon={Target}
+          bgColor="bg-gradient-to-r from-[#58cc02] to-[#46a302]"
+          borderColor="border-[#3a8602]"
+        />
       </div>
     </section>
   );

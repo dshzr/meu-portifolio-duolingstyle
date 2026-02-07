@@ -3,6 +3,7 @@ import React from 'react';
 import { Zap, Code2, Database, Bot, Layout, Terminal, Trophy } from 'lucide-react';
 import { SKILLS } from '../../constants';
 import UnitHeader from '../ui/UnitHeader';
+import RewardCard from '../ui/RewardCard';
 
 const SkillsSection: React.FC = () => {
   // Agrupar habilidades por categoria
@@ -87,19 +88,14 @@ const SkillsSection: React.FC = () => {
         })}
       </div>
 
-      {/* Specialty Badge */}
-      <div className="mt-16 bg-[#1cb0f6] border-b-8 border-[#1899d6] p-8 rounded-[2.5rem] flex items-center justify-between text-white group overflow-hidden relative">
-         <div className="absolute right-0 top-0 opacity-10 -rotate-12 translate-x-4">
-
-         </div>
-         <div className="relative z-10">
-            <h4 className="font-black text-xl mb-1 uppercase tracking-tighter">Especialista Low-code</h4>
-            <p className="font-bold text-white/80 text-sm">Pronto para criar ferramentas complexas e integradas.</p>
-         </div>
-         <div className="bg-white/20 p-4 rounded-3xl backdrop-blur-sm relative z-10 shrink-0">
-            <Trophy size={40} fill="white" />
-         </div>
-      </div>
+      {/* Standardized Reward Card */}
+      <RewardCard 
+        title="Especialista Low-code"
+        description="Pronto para criar ferramentas complexas e integradas, unindo a agilidade do no-code com o poder da lógica de programação."
+        icon={Trophy}
+        bgColor="bg-[#1cb0f6]"
+        borderColor="border-[#1899d6]"
+      />
     </section>
   );
 };

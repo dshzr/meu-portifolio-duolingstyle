@@ -9,7 +9,7 @@ interface UnitHeaderProps {
 }
 
 const UnitHeader: React.FC<UnitHeaderProps> = ({ title, subtitle, colorClass }) => (
-  <div className={`w-full p-8 md:p-10 ${colorClass} text-white rounded-[2.5rem] border-b-[8px] border-black/20 mb-16 flex justify-between items-center overflow-hidden relative shadow-lg group hover:scale-[1.01] transition-transform`}>
+  <div className={`w-full p-8 md:p-10 ${colorClass} text-white rounded-[2.5rem] border-b-[8px] border-black/20 mb-16 flex justify-between items-center overflow-hidden relative shadow-lg group hover:scale-[1.01] transition-transform min-h-[140px] md:min-h-[160px]`}>
     {/* Abstract dynamic background */}
     <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
        <div className="absolute -left-10 -top-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
