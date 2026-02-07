@@ -4,6 +4,7 @@ import { Rocket, ExternalLink, Github, Layout, Monitor, ZoomIn } from 'lucide-re
 import { PROJECTS } from '../../constants';
 import UnitHeader from '../ui/UnitHeader';
 import ImageModal from '../ui/ImageModal';
+import TechIcon from '../ui/TechIcon';
 
 const ProjectsSection: React.FC = () => {
   const hasProjects = PROJECTS.length > 0;
@@ -82,7 +83,8 @@ const ProjectsSection: React.FC = () => {
               <div className="p-8 flex-1 flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 bg-[#ce82ff]/10 text-[#ce82ff] rounded-full text-[10px] font-black uppercase tracking-widest border border-[#ce82ff]/20">
+                    <span key={tag} className="flex items-center gap-1.5 px-3 py-1.5 bg-[#ce82ff]/10 text-[#ce82ff] rounded-full text-[10px] font-black uppercase tracking-widest border border-[#ce82ff]/20">
+                      <TechIcon name={tag} size={14} />
                       {tag}
                     </span>
                   ))}

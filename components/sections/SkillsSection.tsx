@@ -4,6 +4,7 @@ import { Zap, Code2, Database, Bot, Layout, Terminal, Trophy } from 'lucide-reac
 import { SKILLS } from '../../constants';
 import UnitHeader from '../ui/UnitHeader';
 import RewardCard from '../ui/RewardCard';
+import TechIcon, { TECH_MAP } from '../ui/TechIcon';
 
 const SkillsSection: React.FC = () => {
   // Agrupar habilidades por categoria
@@ -54,8 +55,9 @@ const SkillsSection: React.FC = () => {
                   <div key={idx} className="bg-white border-2 border-[#e5e5e5] border-b-[6px] p-5 rounded-3xl flex flex-col gap-4 hover:border-[#ffc800] hover:bg-slate-50/50 transition-all hover:-translate-y-1 active:translate-y-0 active:border-b-2 group">
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center text-slate-400 group-hover:bg-[#ffc800]/20 group-hover:text-[#ffc800] transition-colors">
-                          <Zap size={20} fill={idx % 2 === 0 ? "currentColor" : "none"} />
+                        <div className="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center text-slate-400 group-hover:bg-white transition-colors border border-transparent group-hover:border-[#ffc800]">
+                          <TechIcon name={skill.name} size={24} />
+                          {!TECH_MAP[skill.name] && <Zap size={20} fill={idx % 2 === 0 ? "currentColor" : "none"} />}
                         </div>
                         <span className="font-black text-slate-700 uppercase text-sm tracking-tight">{skill.name}</span>
                       </div>
