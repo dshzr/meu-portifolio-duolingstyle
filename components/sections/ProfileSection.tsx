@@ -6,7 +6,7 @@ import UnitHeader from '../ui/UnitHeader';
 
 const ProfileSection: React.FC = () => {
   return (
-    <section id="profile" className="max-w-2xl mx-auto pt-4 scroll-mt-24 mb-32">
+    <section id="profile" className="w-full pt-4 scroll-mt-24 mb-32">
       <UnitHeader 
         title="Unidade 4: Academia de Conhecimento" 
         subtitle="A base teórica de um desenvolvedor moderno" 

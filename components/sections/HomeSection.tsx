@@ -10,7 +10,7 @@ interface HomeSectionProps {
 
 const HomeSection: React.FC<HomeSectionProps> = ({ onStartJourney }) => {
   return (
-    <section id="home" className="max-w-2xl mx-auto pt-4 scroll-mt-24">
+    <section id="home" className="w-full pt-4 scroll-mt-24">
       <UnitHeader 
         title="Unidade 1: O Início" 
         subtitle="Wellington Santiago - Analista & Mentor" 

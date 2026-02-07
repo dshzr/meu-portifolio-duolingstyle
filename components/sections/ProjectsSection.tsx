@@ -8,7 +8,7 @@ const ProjectsSection: React.FC = () => {
   const hasProjects = PROJECTS.length > 0;
 
   return (
-    <section id="projects" className="max-w-2xl mx-auto pt-4 scroll-mt-24 mb-32">
+    <section id="projects" className="w-full pt-4 scroll-mt-24 mb-32">
       <UnitHeader 
         title="Unidade 5: Arena de Projetos" 
         subtitle="Onde as ideias ganham vida através do código" 

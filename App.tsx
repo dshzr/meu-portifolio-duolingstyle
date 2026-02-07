@@ -32,13 +32,13 @@ const App: React.FC = () => {
       <main className="flex-1 md:ml-24 lg:ml-72 flex flex-col lg:flex-row">
         
         {/* Central Feed - Learning Path */}
-        <div className="flex-1 px-4 py-12 md:px-16 pb-32 md:pb-16 max-w-5xl">
+        <div className="flex-1 px-4 py-12 md:px-16 pb-32 md:pb-16 w-full">
           
           {/* Mobile Header Stats (Sticky) */}
           <MobileHeader />
 
           {/* SECTIONS WRAPPER WITH FADE-IN */}
-          <div className="space-y-4">
+          <div className="space-y-4 max-w-4xl mx-auto">
             <HomeSection onStartJourney={() => handleNavClick('experience')} />
             <ExperienceSection />
             <SkillsSection />

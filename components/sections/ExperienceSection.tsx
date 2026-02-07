@@ -86,7 +86,7 @@ const ExperienceSection: React.FC = () => {
   const reversedExperiences = [...EXPERIENCES].reverse();
   
   return (
-    <section id="experience" className="max-w-2xl mx-auto pt-4 scroll-mt-24">
+    <section id="experience" className="w-full pt-4 scroll-mt-24">
       <UnitHeader 
         title="Unidade 2: Missões de Carreira" 
         subtitle="O caminho trilhado para a maestria técnica" 

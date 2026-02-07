@@ -24,7 +24,7 @@ const SkillsSection: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="max-w-2xl mx-auto pt-4 scroll-mt-24 mb-32">
+    <section id="skills" className="w-full pt-4 scroll-mt-24 mb-32">
        <UnitHeader 
         title="Unidade 3: Inventário Técnico" 
         subtitle="O arsenal de ferramentas desbloqueadas" 
