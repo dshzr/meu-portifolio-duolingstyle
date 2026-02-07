@@ -54,28 +54,32 @@ const ProjectsSection: React.FC = () => {
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {PROJECTS.map((project, idx) => (
-            <div key={idx} className="bg-white border-2 border-[#e5e5e5] border-b-[6px] rounded-[2.5rem] overflow-hidden hover:bg-slate-50 transition-all group active:translate-y-1 active:border-b-2">
+            <div key={idx} className="bg-white border-2 border-[#e5e5e5] border-b-[6px] rounded-[2.5rem] overflow-hidden hover:bg-slate-50 transition-all group active:translate-y-1 active:border-b-2 flex flex-col">
               {project.images && project.images.length > 0 && (
-                <div className={`grid ${project.images.length > 1 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'} bg-slate-100 border-b-2 border-[#e5e5e5]`}>
-                  {project.images.map((img, i) => (
-                    <div 
-                      key={i} 
-                      onClick={() => openLightbox(project.images || [], i)}
-                      className={`h-48 md:h-64 overflow-hidden cursor-zoom-in relative group/img ${i > 0 ? 'border-t-2 md:border-t-0 md:border-l-2' : ''} border-[#e5e5e5]`}
-                    >
-                      <img src={img} alt={`${project.title} ${i + 1}`} className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500" />
-                      <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/20 transition-all flex items-center justify-center opacity-0 group-hover/img:opacity-100">
-                        <div className="bg-white/90 p-3 rounded-2xl shadow-lg border-b-4 border-slate-200">
-                          <ZoomIn className="text-[#ce82ff]" size={24} />
-                        </div>
+                <div className="relative aspect-video bg-slate-100 border-b-2 border-[#e5e5e5] overflow-hidden">
+                  <div 
+                    onClick={() => openLightbox(project.images || [], 0)}
+                    className="w-full h-full cursor-zoom-in relative group/img"
+                  >
+                    <img src={project.images[0]} alt={`${project.title} 1`} className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500" />
+                    
+                    {project.images.length > 1 && (
+                      <div className="absolute bottom-4 right-4 bg-black/60 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest z-10 border border-white/20">
+                        +{project.images.length - 1} fotos
+                      </div>
+                    )}
+                    
+                    <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/20 transition-all flex items-center justify-center opacity-0 group-hover/img:opacity-100">
+                      <div className="bg-white/90 p-3 rounded-2xl shadow-lg border-b-4 border-slate-200">
+                        <ZoomIn className="text-[#ce82ff]" size={24} />
                       </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
               )}
-              <div className="p-8">
+              <div className="p-8 flex-1 flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map(tag => (
                     <span key={tag} className="px-3 py-1 bg-[#ce82ff]/10 text-[#ce82ff] rounded-full text-[10px] font-black uppercase tracking-widest border border-[#ce82ff]/20">
@@ -83,17 +87,17 @@ const ProjectsSection: React.FC = () => {
                     </span>
                   ))}
                 </div>
-                <h4 className="text-2xl font-black text-slate-800 mb-3 uppercase tracking-tighter">{project.title}</h4>
-                <p className="text-slate-500 font-bold mb-6 leading-relaxed">{project.description}</p>
-                <div className="flex gap-4">
+                <h4 className="text-xl font-black text-slate-800 mb-3 uppercase tracking-tighter line-clamp-1">{project.title}</h4>
+                <p className="text-slate-500 font-bold mb-6 leading-relaxed text-sm line-clamp-3">{project.description}</p>
+                <div className="flex gap-4 mt-auto">
                   {project.link && (
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-[#ce82ff] text-white rounded-2xl font-black text-xs uppercase tracking-widest border-b-4 border-[#a331d3] hover:opacity-90 active:translate-y-1 active:border-b-0 transition-all">
-                      <Monitor size={16} /> Live Demo
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-3 bg-[#ce82ff] text-white rounded-2xl font-black text-[10px] uppercase tracking-widest border-b-4 border-[#a331d3] hover:opacity-90 active:translate-y-1 active:border-b-0 transition-all">
+                      <Monitor size={14} /> Link
                     </a>
                   )}
                   {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-slate-100 text-slate-600 rounded-2xl font-black text-xs uppercase tracking-widest border-2 border-[#e5e5e5] border-b-4 hover:bg-white active:translate-y-1 active:border-b-2 transition-all">
-                      <Github size={16} /> Source
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-3 bg-slate-100 text-slate-600 rounded-2xl font-black text-[10px] uppercase tracking-widest border-2 border-[#e5e5e5] border-b-4 hover:bg-white active:translate-y-1 active:border-b-2 transition-all">
+                      <Github size={14} /> Github
                     </a>
                   )}
                 </div>

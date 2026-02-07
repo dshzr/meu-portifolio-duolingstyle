@@ -130,12 +130,33 @@ export const PROJECTS: Project[] = [
     tags: ["CLT", "Automação", "RH", "Bubble.io"],
   },
   {
-    title: "Bug Report System",
+    title: "Sistema de Relatórios de Bug",
     description: "Plataforma de gestão de bugs com interface estilo CRM. Inclui sistema de onboarding via popup para novas funcionalidades e um painel administrativo para controle de tickets com status dinâmicos (Pendente, Em Andamento, Concluído), otimizando o fluxo de manutenção.",
     images: [
       "/assets/projetos/bug_reports.png",
       "/assets/projetos/popup_reportar_bug_envioform.png"
     ],
     tags: ["CRM", "UI/UX", "Gestão", "Bubble.io"],
+  },
+  {
+    title: "Campanhas WhatsApp & Chatbot IA",
+    description: "Sistema robusto de campanhas automatizadas integrando Bubble e Uazapi via Webhooks. Realiza disparos diários de relatórios de conectividade escolar para redes internas, externas e regionais. Inclui um chatbot inteligente desenvolvido com OpenAI e N8N no mesmo canal, capaz de fornecer informações em tempo real e gerenciar abertura de tickets de suporte.",
+    images: [
+      "/assets/projetos/campanhas_whatsapp.png",
+      "/assets/projetos/campanhas_whatsapp_2.png"
+    ],
+    tags: ["Bubble.io", "N8N", "OpenAI", "Automação"],
+  },
+  {
+    title: "Sistema de Gestão de Férias",
+    description: "Plataforma interna para controle de férias desenvolvida em Bubble. O sistema gerencia o ciclo completo de solicitações, validando regras de períodos aquisitivos, saldo de dias disponíveis, antecedência mínima para pedidos e fluxos de aprovação hierárquica, garantindo conformidade com as políticas da empresa.",
+    images: ["/assets/projetos/ferias.png"],
+    tags: ["RH", "Gestão Interna", "Bubble.io", "Workflow"],
+  },
+  {
+    title: "Gestão de Alteração Cadastral",
+    description: "Sistema self-service para atualização de dados de colaboradores. Inclui um painel administrativo para o RH com histórico detalhado de solicitações, permitindo a aprovação ou recusa de mudanças. Em caso de aprovação, o sistema realiza a atualização automática dos dados no banco, eliminando processos manuais.",
+    images: ["/assets/projetos/sistema_solicitacao_cadastro_usuario.png"],
+    tags: ["Automação", "RH", "Bubble.io", "Data Management"],
   }
 ];
