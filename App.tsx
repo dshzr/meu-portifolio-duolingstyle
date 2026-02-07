@@ -3,7 +3,6 @@ import React from 'react';
 
 // Layout Components
 import Sidebar from './components/layout/Sidebar';
-import StatsSidebar from './components/layout/StatsSidebar';
 import MobileHeader from './components/layout/MobileHeader';
 import MobileFooter from './components/layout/MobileFooter';
 

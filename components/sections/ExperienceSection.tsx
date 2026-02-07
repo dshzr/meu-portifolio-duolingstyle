@@ -48,21 +48,21 @@ const PathNode: React.FC<PathNodeProps> = ({ index, experience, isLast }) => {
         </div>
         
         {/* Experience Bubble / Tooltip STYLE UPGRADE */}
-        <div className={`absolute top-1/2 -translate-y-1/2 ${isLeft ? 'left-full ml-10' : 'right-full mr-10'} w-64 md:w-80 group-hover:opacity-100 transition-all z-20 pointer-events-none group-hover:pointer-events-auto opacity-100 md:opacity-0`}>
+        <div className={`absolute top-1/2 -translate-y-1/2 ${isLeft ? 'md:left-full md:ml-10' : 'md:right-full md:mr-10'} w-64 md:w-80 transition-all z-20 pointer-events-none group-hover:pointer-events-auto opacity-0 md:group-hover:opacity-100 hidden md:block group-hover:block`}>
           <div className="bg-white border-2 border-[#e5e5e5] border-b-[6px] p-6 rounded-[2rem] shadow-2xl relative translate-y-2 group-hover:translate-y-0 transition-transform">
             {/* Arrow */}
             <div className={`absolute top-1/2 -translate-y-1/2 ${isLeft ? '-left-3 rotate-45' : '-right-3 rotate-45'} w-6 h-6 bg-white border-l-2 border-b-2 border-[#e5e5e5] hidden md:block`}></div>
             
-            <div className={`${style.color.replace('bg-', 'text-')} font-black uppercase text-xs mb-2 flex items-center gap-2 tracking-widest`}>
-              <CheckCircle2 size={14} /> Missão Completada
+            <div className={`${style.color.replace('bg-', 'text-')} font-black uppercase text-[10px] mb-2 flex items-center gap-2 tracking-widest`}>
+              <CheckCircle2 size={12} /> Missão Completada
             </div>
-            <h4 className="font-black text-slate-800 text-lg leading-tight uppercase mb-1">{experience.role}</h4>
-            <div className="flex items-center gap-2 text-sm text-slate-500 font-bold mb-3">
+            <h4 className="font-black text-slate-800 text-base leading-tight uppercase mb-1">{experience.role}</h4>
+            <div className="flex items-center gap-2 text-xs text-slate-500 font-bold mb-3">
               <span className="w-2 h-2 bg-[#afafaf] rounded-full"></span>
               {experience.company}
             </div>
             {experience.description && (
-               <p className="text-xs text-slate-400 font-bold leading-relaxed mb-3">
+               <p className="text-[10px] text-slate-400 font-bold leading-relaxed mb-3">
                  {experience.description}
                </p>
             )}
