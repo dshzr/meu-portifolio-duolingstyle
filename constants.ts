@@ -158,5 +158,26 @@ export const PROJECTS: Project[] = [
     description: "Sistema self-service para atualização de dados de colaboradores. Inclui um painel administrativo para o RH com histórico detalhado de solicitações, permitindo a aprovação ou recusa de mudanças. Em caso de aprovação, o sistema realiza a atualização automática dos dados no banco, eliminando processos manuais.",
     images: ["/assets/projetos/sistema_solicitacao_cadastro_usuario.png"],
     tags: ["Automação", "RH", "Bubble.io", "Data Management"],
+  },
+  {
+    title: "Calculadora de Dieta com IA (Streaming)",
+    description: "API de streaming integrada ao Bubble para cálculo de dietas personalizadas em tempo real. Utiliza OpenAI para processar os dados e retornar respostas instantâneas, proporcionando uma experiência de usuário fluida e interativa com processamento de linguagem natural.",
+    images: ["/assets/projetos/compartilha_online.png"],
+    tags: ["Bubble.io", "OpenAI", "API Streaming", "Saúde"],
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7389032722419159040/",
+  },
+  {
+    title: "Jogo Palavra Misteriosa (Shopee Live)",
+    description: "Web app interativo desenvolvido para lives na Shopee. O jogo desafia os espectadores a adivinharem palavras misteriosas, aumentando o engajamento em tempo real. Desenvolvido com auxílio de IA (Claude Code), garantindo performance e uma interface dinâmica para alta concorrência.",
+    images: ["/assets/projetos/shopee.png"],
+    tags: ["Claude Code", "HTML", "CSS", "JavaScript"],
+    link: "https://palavra-misteriosa.netlify.app/",
+  },
+  {
+    title: "TheMoviesList - Movie Explorer",
+    description: "Plataforma interativa para exploração de filmes utilizando a API do TMDB. Construída com React e estilizada com Tailwind CSS, oferece uma interface moderna e responsiva para visualizar detalhes, avaliações e trailers de filmes, focando em performance e experiência de busca fluida.",
+    images: ["/assets/projetos/api_themovietb.png"],
+    tags: ["React", "Tailwind", "JavaScript", "API"],
+    link: "https://themovieslist.netlify.app/",
   }
 ];

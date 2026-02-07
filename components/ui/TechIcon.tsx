@@ -12,6 +12,8 @@ export const TECH_MAP: Record<string, string> = {
   'bubble.io': 'https://imgs.search.brave.com/vYWMj-NWWH0P7viayHJfDtgFzg01g1DK8ZAvF7HiNsg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9maXZl/cnItcmVzLmNsb3Vk/aW5hcnkuY29tL3Rf/Z2lnX2NhcmRzX3dl/YixxX2F1dG8sZl9h/dXRvL2dpZ3MvMzU4/Mjk4MDI2L29yaWdp/bmFsL2NiODYzYzdi/YzQ4ODAxN2IxMDJm/MzBkMmJmZTg0NmQ1/YTkwODQwMzguanBn',
   'n8n': 'https://imgs.search.brave.com/3op0ljzuLlobPkLuIK5qVXcw28YTn9_7jEoTn-hnaaE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9uOG4u/aW8vYnJhbmRndWlk/ZWxpbmVzL2RvbnQv/c2hhZG93LnBuZw',
   'N8N': 'https://imgs.search.brave.com/3op0ljzuLlobPkLuIK5qVXcw28YTn9_7jEoTn-hnaaE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9uOG4u/aW8vYnJhbmRndWlk/ZWxpbmVzL2RvbnQv/c2hhZG93LnBuZw',
+  'Claude': 'https://static.cdnlogo.com/logos/c/69/claude.svg',
+  'claude': 'https://static.cdnlogo.com/logos/c/69/claude.svg',
   'OpenAI': 'https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_logo_2025.svg',
   'openai': 'https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_logo_2025.svg',
   'Node.js': 'https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg',
@@ -32,6 +34,9 @@ export const TECH_MAP: Record<string, string> = {
   'weweb': 'https://imgs.search.brave.com/h-vXbgS7CelnYl6tkTIe9I76Hc2NrgFwVjDuopuSOhg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cHJvZC53ZWJzaXRl/LWZpbGVzLmNvbS82/MzQwNWFlZDBlZWY4/NzhhZTk3ODE5Yzgv/NjhjYzIwOGYwZDFi/ZTUyYjc3NTg3ZTJk/X3dld2ViJTIwKDEp/LndlYnA',
   'Tailwind': 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg',
   'tailwind': 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg',
+  'HTML': 'https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg',
+  'CSS': 'https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg',
+  'Claude Code': 'https://static.cdnlogo.com/logos/c/69/claude.svg',
 };
 
 const TechIcon: React.FC<TechIconProps> = ({ name, size = 20, className = '' }) => {
