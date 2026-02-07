@@ -20,7 +20,7 @@ const StatsSidebar: React.FC<StatsSidebarProps> = ({ onContactClick }) => {
           </div>
           <div className="flex items-center gap-4 mb-6">
             <div className="w-14 h-14 bg-[#1cb0f6] rounded-2xl flex items-center justify-center border-2 border-white shadow-lg overflow-hidden shrink-0">
-               <img src="https://media.licdn.com/dms/image/v2/D4D03AQE_R1tX2T8K8A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715694833292?e=1744243200&v=beta&t=L6g6fV6v3qE3V3V3V3V3V3V3V3V3V3V3V3V3V3V3V3E" alt="Avatar" className="w-full h-full object-cover" />
+               <img src="/assets/wellington.jpg" alt="Avatar" className="w-full h-full object-cover" />
             </div>
             <div>
               <h4 className="font-black text-slate-800 text-sm tracking-tight">wellsantiago</h4>
