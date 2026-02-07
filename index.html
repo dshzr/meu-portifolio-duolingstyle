@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wellington Santiago | Duolingo Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --duo-green: #58cc02;
+        --duo-green-dark: #46a302;
+        --duo-blue: #1cb0f6;
+        --duo-blue-dark: #1899d6;
+        --duo-orange: #ff9600;
+        --duo-red: #ff4b4b;
+        --duo-gray: #afafaf;
+        --duo-border: #e5e5e5;
+      }
+
+      body {
+        font-family: 'Nunito', 'Outfit', sans-serif;
+        scroll-behavior: smooth;
+        background-color: #ffffff;
+        color: #4b4b4b;
+      }
+
+      h1, h2, h3, h4, .font-outfit {
+        font-family: 'Outfit', sans-serif;
+      }
+
+      .duo-card {
+        border: 2px solid var(--duo-border);
+        border-bottom-width: 4px;
+        transition: all 0.2s ease;
+      }
+
+      .duo-card:active {
+        transform: translateY(2px);
+        border-bottom-width: 2px;
+        margin-bottom: 2px;
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--duo-border);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--duo-gray);
+      }
+
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.4",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-white text-slate-700">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
