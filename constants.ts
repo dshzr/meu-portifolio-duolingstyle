@@ -72,18 +72,55 @@ export const SKILLS: Skill[] = [
 ];
 
 export const CERTIFICATIONS: Certification[] = [
-  { name: "Front End & UX/UI Design" },
-  { name: "CSS Grid" },
-  { name: "JavaScript Completo ES6" },
-  { name: "HTML e CSS para Iniciantes" }
+  {
+    name: "Front End & UX/UI Design",
+    organization: "Origamid",
+    issueDate: "Setembro de 2024",
+    credentialId: "aa267f9a",
+    link: "https://www.origamid.com/certificate/aa267f9a"
+  },
+  {
+    name: "HTML e CSS para Iniciantes",
+    organization: "Origamid",
+    issueDate: "Agosto de 2025",
+    credentialId: "05d8be56",
+    link: "https://origamid.com/certificate/05d8be56"
+  },
+  {
+    name: "JavaScript Completo ES6",
+    organization: "Origamid",
+    issueDate: "Agosto de 2025",
+    credentialId: "b0a30c83",
+    link: "https://origamid.com/certificate/b0a30c83"
+  },
+  {
+    name: "Programação Python do Zero ao Avançado + 32 Projetos",
+    organization: "Udemy",
+    issueDate: "Outubro de 2023",
+    credentialId: "UC-1e2f257b-c096-41c0-b01e-5adf171fc606",
+    link: "https://www.udemy.com/certificate/UC-1e2f257b-c096-41c0-b01e-5adf171fc606/"
+  },
+  {
+    name: "CSS Grid",
+    organization: "Origamid",
+    issueDate: "Agosto de 2021",
+    credentialId: "8ff20c39",
+    link: "https://www.origamid.com/certificate/8ff20c39"
+  },
+  {
+    name: "CSS Flexbox",
+    organization: "Origamid",
+    issueDate: "Novembro de 2021",
+    credentialId: "9f1dbc2f",
+    link: "https://origamid.com/certificate/9f1dbc2f"
+  },
+  {
+    name: "Certificado de autoridade: Programação",
+    organization: "DevMedia",
+    issueDate: "Dezembro de 2021",
+    link: "https://www.devmedia.com.br/certificado/tecnologia/programacao/wellington-santiago-dos-santos-1"
+  }
 ];
 
 export const PROJECTS: Project[] = [
-  // Ainda não há projetos, mas a estrutura está pronta.
-  // {
-  //   title: "Seu Projeto Épico",
-  //   description: "Uma solução incrível construída com No-code.",
-  //   tags: ["Bubble.io", "API"],
-  //   link: "#",
-  // }
 ];

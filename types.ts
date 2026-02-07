@@ -15,6 +15,10 @@ export interface Education {
 
 export interface Certification {
   name: string;
+  organization: string;
+  issueDate: string;
+  credentialId?: string;
+  link?: string;
 }
 
 export interface Skill {

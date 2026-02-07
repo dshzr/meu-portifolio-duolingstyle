@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Home, BookOpen, Trophy, Zap, Layout } from 'lucide-react';
+import { Home, BookOpen, Trophy, Zap, Layout, Award } from 'lucide-react';
 
 interface SidebarItemProps {
   icon: any;
@@ -39,6 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onNavClick }) => {
     { icon: Trophy, label: "Missões", id: "experience" },
     { icon: Zap, label: "Inventário", id: "skills" },
     { icon: Layout, label: "Arena", id: "projects" },
+    { icon: Award, label: "Mural", id: "certifications" },
     { icon: BookOpen, label: "Academia", id: "profile" },
   ];
 

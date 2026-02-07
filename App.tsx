@@ -13,13 +13,14 @@ import ExperienceSection from './components/sections/ExperienceSection';
 import ProfileSection from './components/sections/ProfileSection';
 import SkillsSection from './components/sections/SkillsSection';
 import ProjectsSection from './components/sections/ProjectsSection';
+import CertificationsSection from './components/sections/CertificationsSection';
 
 // Hooks
 import { useNavigationObserver } from './hooks/useNavigationObserver';
 
 const App: React.FC = () => {
   // Ordem lógica e criativa das seções
-  const sectionIds = ['home', 'experience', 'skills', 'projects', 'profile'];
+  const sectionIds = ['home', 'experience', 'skills', 'projects', 'certifications', 'profile'];
   const { activeTab, handleNavClick } = useNavigationObserver(sectionIds);
 
   return (
@@ -43,6 +44,7 @@ const App: React.FC = () => {
             <ExperienceSection />
             <SkillsSection />
             <ProjectsSection />
+            <CertificationsSection />
             <ProfileSection />
           </div>
         </div>

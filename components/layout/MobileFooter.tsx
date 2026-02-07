@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Home, BookOpen, Trophy, Zap, Layout } from 'lucide-react';
+import { Home, BookOpen, Trophy, Zap, Layout, Award } from 'lucide-react';
 
 interface MobileFooterProps {
   activeTab: string;
@@ -13,6 +13,7 @@ const MobileFooter: React.FC<MobileFooterProps> = ({ activeTab, onNavClick }) =>
     { icon: Trophy, id: 'experience' },
     { icon: Zap, id: 'skills' },
     { icon: Layout, id: 'projects' },
+    { icon: Award, id: 'certifications' },
     { icon: BookOpen, id: 'profile' },
   ];
 
