@@ -1,11 +1,39 @@
 
-import React from 'react';
-import { Rocket, ExternalLink, Github, Layout, Monitor } from 'lucide-react';
+import React, { useState } from 'react';
+import { Rocket, ExternalLink, Github, Layout, Monitor, ZoomIn } from 'lucide-react';
 import { PROJECTS } from '../../constants';
 import UnitHeader from '../ui/UnitHeader';
+import ImageModal from '../ui/ImageModal';
 
 const ProjectsSection: React.FC = () => {
   const hasProjects = PROJECTS.length > 0;
+  const [modalData, setModalData] = useState<{ images: string[], index: number, isOpen: boolean }>({
+    images: [],
+    index: 0,
+    isOpen: false
+  });
+
+  const openLightbox = (images: string[], index: number) => {
+    setModalData({ images, index, isOpen: true });
+  };
+
+  const closeLightbox = () => {
+    setModalData(prev => ({ ...prev, isOpen: false }));
+  };
+
+  const nextImage = () => {
+    setModalData(prev => ({
+      ...prev,
+      index: (prev.index + 1) % prev.images.length
+    }));
+  };
+
+  const prevImage = () => {
+    setModalData(prev => ({
+      ...prev,
+      index: (prev.index - 1 + prev.images.length) % prev.images.length
+    }));
+  };
 
   return (
     <section id="projects" className="w-full pt-4 scroll-mt-24 mb-32">
@@ -29,9 +57,22 @@ const ProjectsSection: React.FC = () => {
         <div className="grid grid-cols-1 gap-8">
           {PROJECTS.map((project, idx) => (
             <div key={idx} className="bg-white border-2 border-[#e5e5e5] border-b-[6px] rounded-[2.5rem] overflow-hidden hover:bg-slate-50 transition-all group active:translate-y-1 active:border-b-2">
-              {project.image && (
-                <div className="h-48 md:h-64 bg-slate-100 overflow-hidden border-b-2 border-[#e5e5e5]">
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              {project.images && project.images.length > 0 && (
+                <div className={`grid ${project.images.length > 1 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'} bg-slate-100 border-b-2 border-[#e5e5e5]`}>
+                  {project.images.map((img, i) => (
+                    <div 
+                      key={i} 
+                      onClick={() => openLightbox(project.images || [], i)}
+                      className={`h-48 md:h-64 overflow-hidden cursor-zoom-in relative group/img ${i > 0 ? 'border-t-2 md:border-t-0 md:border-l-2' : ''} border-[#e5e5e5]`}
+                    >
+                      <img src={img} alt={`${project.title} ${i + 1}`} className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500" />
+                      <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/20 transition-all flex items-center justify-center opacity-0 group-hover/img:opacity-100">
+                        <div className="bg-white/90 p-3 rounded-2xl shadow-lg border-b-4 border-slate-200">
+                          <ZoomIn className="text-[#ce82ff]" size={24} />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               )}
               <div className="p-8">
@@ -61,6 +102,15 @@ const ProjectsSection: React.FC = () => {
           ))}
         </div>
       )}
+
+      <ImageModal 
+        images={modalData.images}
+        currentIndex={modalData.index}
+        isOpen={modalData.isOpen}
+        onClose={closeLightbox}
+        onPrev={prevImage}
+        onNext={nextImage}
+      />
     </section>
   );
 };

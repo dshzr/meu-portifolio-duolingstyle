@@ -123,4 +123,19 @@ export const CERTIFICATIONS: Certification[] = [
 ];
 
 export const PROJECTS: Project[] = [
+  {
+    title: "Auxílio Creche",
+    description: "Sistema completo para gestão de auxílio creche, integrando regras da CLT e automação de processos. O sistema gerencia o envio de comprovantes e executa uma verificação semestral automática, notificando funcionários e o RH via e-mail sobre pendências e liberações.",
+    images: ["/assets/projetos/auxilio_creche.png"],
+    tags: ["CLT", "Automação", "RH", "Bubble.io"],
+  },
+  {
+    title: "Bug Report System",
+    description: "Plataforma de gestão de bugs com interface estilo CRM. Inclui sistema de onboarding via popup para novas funcionalidades e um painel administrativo para controle de tickets com status dinâmicos (Pendente, Em Andamento, Concluído), otimizando o fluxo de manutenção.",
+    images: [
+      "/assets/projetos/bug_reports.png",
+      "/assets/projetos/popup_reportar_bug_envioform.png"
+    ],
+    tags: ["CRM", "UI/UX", "Gestão", "Bubble.io"],
+  }
 ];
