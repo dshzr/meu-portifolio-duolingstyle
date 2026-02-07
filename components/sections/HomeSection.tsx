@@ -38,25 +38,25 @@ const HomeSection: React.FC<HomeSectionProps> = ({ onStartJourney }) => {
 
           <div className="relative shrink-0">
             <div className="w-32 h-32 md:w-40 md:h-40 bg-[#1cb0f6] rounded-[2.5rem] flex items-center justify-center group-hover:scale-105 group-hover:rotate-2 transition-transform overflow-hidden border-4 border-[#1cb0f6] shadow-xl relative z-10">
-               <img 
-                 src="/assets/wellington.jpg"
-                 alt="Wellington Santiago"
-                 className="w-full h-full object-cover"
-                 onError={(e) => {
-                   const target = e.target as HTMLImageElement;
-                   target.style.display = 'none';
-                   target.parentElement!.innerHTML = '<div class="flex items-center justify-center w-full h-full bg-[#1cb0f6] text-white"><User size={64} /></div>';
-                 }}
-               />
-            </div>
-          
-          </div>
-          
-          <div className="z-10 text-center md:text-left flex-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1cb0f6]/10 text-[#1cb0f6] rounded-full text-[10px] font-black uppercase tracking-widest mb-3">
-              <Zap size={12} fill="currentColor" /> Level 99 Developer
-            </div>
-            <h3 className="text-3xl font-black mb-2 text-slate-800 tracking-tight">Wellington Santiago</h3>
+                <img 
+                  src="/assets/wellington.jpg"
+                  alt="Wellington Santiago - Analista Bubble, FlutterFlow e Mentor de Desenvolvimento No-code"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    target.parentElement!.innerHTML = '<div class="flex items-center justify-center w-full h-full bg-[#1cb0f6] text-white"><User size={64} /></div>';
+                  }}
+                />
+             </div>
+           
+           </div>
+           
+           <div className="z-10 text-center md:text-left flex-1">
+             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1cb0f6]/10 text-[#1cb0f6] rounded-full text-[10px] font-black uppercase tracking-widest mb-3">
+               <Zap size={12} fill="currentColor" /> Level 99 Developer
+             </div>
+             <h1 className="text-3xl font-black mb-2 text-slate-800 tracking-tight">Wellington Santiago</h1>
             <p className="text-slate-500 font-bold leading-relaxed mb-6 text-sm md:text-base">
               Transformo ideias em <span className="text-[#58cc02] font-black">soluções reais</span> usando o poder do Low-code e No-code. 
               Especialista em construir o futuro, um clique por vez.

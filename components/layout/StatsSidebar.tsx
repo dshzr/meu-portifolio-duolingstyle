@@ -119,7 +119,7 @@ const StatsSidebar: React.FC<StatsSidebarProps> = ({ onContactClick }) => {
         {/* Social Terminal */}
         <div className="flex justify-center gap-6 pt-4">
            {[
-             { Icon: Github, href: "https://github.com/wellsant", color: "hover:text-black" },
+             { Icon: Github, href: "https://github.com/dshzr", color: "hover:text-black" },
              { Icon: Linkedin, href: "https://linkedin.com/in/wellington-santiago-dev", color: "hover:text-[#0077b5]" }
            ].map(({ Icon, href, color }, i) => (
              <a key={i} href={href} target="_blank" rel="noopener" className={`w-14 h-14 bg-white border-2 border-[#e5e5e5] border-b-4 rounded-2xl flex items-center justify-center text-slate-300 ${color} transition-all hover:-translate-y-1 hover:border-[#1cb0f6] group shadow-sm`}>
