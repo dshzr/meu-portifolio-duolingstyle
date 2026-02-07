@@ -47,12 +47,12 @@ const StatsSidebar: React.FC<StatsSidebarProps> = ({ onContactClick }) => {
           </div>
         </div>
 
-        {/* Energy Status Card */}
+        {/* Energy Status Card -> Disponibilidade & Quests */}
         <div className="bg-white border-2 border-[#e5e5e5] border-b-[6px] rounded-[2.5rem] p-6 shadow-sm">
           <div className="flex justify-between items-center mb-6">
              <div className="flex flex-col">
-               <h4 className="text-xs font-black uppercase text-slate-400 tracking-widest">Health</h4>
-               <span className="text-lg font-black text-slate-800 tracking-tighter uppercase">Energia</span>
+               <h4 className="text-xs font-black uppercase text-slate-400 tracking-widest">Disponibilidade</h4>
+               <span className="text-lg font-black text-[#58cc02] tracking-tighter uppercase">Disponível</span>
              </div>
              <div className="flex gap-1">
                 {[1,2,3,4,5].map(i => <Heart key={i} size={16} fill="#ff4b4b" color="#ff4b4b" className="animate-pulse" style={{ animationDelay: `${i * 200}ms` }} />)}
@@ -60,54 +60,62 @@ const StatsSidebar: React.FC<StatsSidebarProps> = ({ onContactClick }) => {
           </div>
           
           <div className="space-y-4 mb-6">
-             <div className="flex items-center gap-3">
-                <div className="p-2 bg-[#58cc02]/10 text-[#58cc02] rounded-lg">
-                   <Target size={16} />
-                </div>
-                <div className="flex-1">
-                   <div className="flex justify-between text-[10px] font-black uppercase mb-1">
-                      <span>Monthly Goal</span>
-                      <span>85%</span>
-                   </div>
-                   <div className="h-2 w-full bg-[#f0f0f0] rounded-full overflow-hidden">
-                      <div className="h-full bg-[#58cc02] w-[85%] rounded-full shadow-[0_0_10px_rgba(88,204,2,0.5)]"></div>
-                   </div>
-                </div>
-             </div>
+             <h4 className="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-4">Missões de Hoje</h4>
+             
+             {[
+               { task: "Verificar Projetos Bubble", status: "80%", color: "bg-[#ce82ff]" },
+               { task: "Analisar Automações n8n", status: "100%", color: "bg-[#ff9600]" },
+               { task: "Entrar em contato", status: "0%", color: "bg-[#1cb0f6]" }
+             ].map((quest, i) => (
+               <div key={i} className="flex items-center gap-3">
+                  <div className={`w-8 h-8 rounded-lg ${quest.color} flex items-center justify-center text-white shadow-sm`}>
+                    {quest.status === "100%" ? <Zap size={14} fill="white" /> : <Target size={14} />}
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex justify-between text-[9px] font-black uppercase mb-1">
+                       <span className="text-slate-600 truncate max-w-[120px]">{quest.task}</span>
+                       <span className={quest.status === "100%" ? "text-[#58cc02]" : "text-slate-400"}>{quest.status}</span>
+                    </div>
+                    <div className="h-1.5 w-full bg-[#f0f0f0] rounded-full overflow-hidden">
+                       <div 
+                        className={`h-full ${quest.status === "100%" ? 'bg-[#58cc02]' : quest.color} transition-all duration-1000`} 
+                        style={{ width: quest.status }}
+                       ></div>
+                    </div>
+                  </div>
+               </div>
+             ))}
           </div>
 
           <DuoButton color="green" className="w-full text-xs py-4 shadow-lg group" onClick={onContactClick}>
             <span className="inline-flex items-center gap-2">
-              
+              <Linkedin size={16} />
               Enviar Convite
             </span>
           </DuoButton>
         </div>
 
-        {/* Top Tech Leagues */}
+        {/* Idiomas / Cursos */}
         <div className="bg-white border-2 border-[#e5e5e5] border-b-[6px] rounded-[2.5rem] p-6 shadow-sm">
           <h4 className="text-xs font-black uppercase text-slate-400 mb-6 tracking-widest flex items-center justify-between">
-            Top Leagues <Trophy size={14} />
+            Meus Cursos <Trophy size={14} />
           </h4>
-          <div className="space-y-5">
-            {SKILLS.slice(0, 4).map((skill, idx) => (
-              <div key={skill.name} className="flex items-center gap-4 group">
-                <div className="relative">
-                   <div className={`w-10 h-10 ${idx === 0 ? 'bg-[#ffc800]' : 'bg-slate-100'} rounded-xl flex items-center justify-center font-black ${idx === 0 ? 'text-white' : 'text-slate-400'} group-hover:scale-110 transition-transform shadow-sm`}>
-                      {idx + 1}
-                   </div>
-                </div>
+          <div className="space-y-4">
+            {[
+              { lang: "Português", level: "Nativo", flag: "🇧🇷", xp: "100%" },
+              { lang: "Inglês", level: "Intermediário", flag: "🇺🇸", xp: "65%" }
+            ].map((course, i) => (
+              <div key={i} className="flex items-center gap-4 group cursor-help">
+                <div className="text-3xl group-hover:scale-110 transition-transform">{course.flag}</div>
                 <div className="flex-1">
-                  <div className="flex justify-between text-[10px] font-black uppercase mb-1 tracking-tighter">
-                    <span className="text-slate-700">{skill.name}</span>
-                    <span className={`${idx === 0 ? 'text-[#ff9600]' : 'text-[#58cc02]'} flex items-center gap-1`}>
-                        Diamante
-                    </span>
+                  <div className="flex justify-between text-[10px] font-black uppercase mb-1">
+                    <span className="text-slate-700">{course.lang}</span>
+                    <span className="text-[#1cb0f6]">{course.level}</span>
                   </div>
-                  <div className="h-2 w-full bg-[#f0f0f0] rounded-full overflow-hidden">
+                  <div className="h-2 w-full bg-[#f0f0f0] rounded-full overflow-hidden p-[1px] border border-[#e5e5e5]">
                     <div 
-                      className={`h-full ${idx === 0 ? 'bg-[#ffc800]' : 'bg-[#58cc02]'} rounded-full transition-all duration-1000`} 
-                      style={{ width: `${100 - (idx * 5)}%` }}
+                      className="h-full bg-gradient-to-r from-[#1cb0f6] to-[#20c4ff] rounded-full" 
+                      style={{ width: course.xp }}
                     ></div>
                   </div>
                 </div>
@@ -115,6 +123,7 @@ const StatsSidebar: React.FC<StatsSidebarProps> = ({ onContactClick }) => {
             ))}
           </div>
         </div>
+
 
         {/* Social Terminal */}
         <div className="flex justify-center gap-6 pt-4">

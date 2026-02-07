@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { User, Zap, Flame, Target } from 'lucide-react';
+import { User, Zap, Flame, Target, Linkedin, Github, MessageCircle } from 'lucide-react';
 import UnitHeader from '../ui/UnitHeader';
 import DuoButton from '../ui/DuoButton';
 import RewardCard from '../ui/RewardCard';
@@ -62,10 +62,28 @@ const HomeSection: React.FC<HomeSectionProps> = ({ onStartJourney }) => {
               Transformo ideias em <span className="text-[#58cc02] font-black">soluções reais</span> usando o poder do Low-code e No-code. 
               Especialista em construir o futuro, um clique por vez.
             </p>
-            <div className="flex flex-wrap justify-center md:justify-start gap-3">
+            <div className="flex flex-wrap justify-center md:justify-start items-center gap-4">
               <DuoButton color="blue" className="text-xs px-10 py-4 shadow-lg" onClick={onStartJourney}>
                 Explorar Jornada
               </DuoButton>
+
+              <div className="flex gap-2">
+                {[
+                  { icon: Linkedin, href: "https://linkedin.com/in/wellington-santiago-dev", color: "hover:text-[#0077b5]" },
+                  { icon: Github, href: "https://github.com/dshzr", color: "hover:text-black" },
+                  { icon: MessageCircle, href: "https://wa.me/5513996918986", color: "hover:text-[#25d366]" }
+                ].map((social, i) => (
+                  <a 
+                    key={i} 
+                    href={social.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={`w-12 h-12 bg-white border-2 border-[#e5e5e5] border-b-4 rounded-xl flex items-center justify-center text-slate-400 ${social.color} transition-all hover:-translate-y-1 hover:border-[#1cb0f6] active:translate-y-0 active:border-b-2`}
+                  >
+                    <social.icon size={20} />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
